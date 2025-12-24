@@ -3,8 +3,16 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
-  base: "https://franklinboachieyiadom.github.io/snb/",
+  base: "/snb/",
   build: {
     outDir: "dist",
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        about: "about.html",
+        services: "services.html",
+        contact: "contact.html",
+      },
+    },
   },
 });
